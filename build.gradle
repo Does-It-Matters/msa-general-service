@@ -24,24 +24,24 @@ repositories {
 }
 
 dependencies {
-	// 하위 모듈 의존성
+	// 요청 접수 의존성
 	implementation project(':general-user-input-api')
 	implementation project(':general-user-input-http')
 
+	// 로직 처리 의존성
 	implementation project(':general-user-business-logic-api')
 	implementation project(':general-user-business-logic-basic')
 
+	// 요청 의뢰 의존성 - 영속성 관련
+	implementation project(':general-user-output-persistence-api')
+	implementation project(':general-user-output-unsynchronized-hashmap')
+
+	// 요청 의뢰 의존성 - user auth 도메인 요청 관련
+	implementation project(':general-user-output-auth-domain-api')
+	implementation project(':general-user-output-auth-domain-http')
+
 	// 스프링 web starter 의존성
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-
-	// lombok 의존성
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-
-	// 데이터베이스 의존성
-	// implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	// runtimeOnly 'com.h2database:h2'
-	// runtimeOnly 'com.mysql:mysql-connector-j'
 
 	// 테스트 의존성
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

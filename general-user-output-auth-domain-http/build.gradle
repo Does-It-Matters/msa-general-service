@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    // 하위 모듈 의존성
+    // user auth 도메인에 요청 의뢰하는 인터페이스 모듈 구현 목적
     implementation project(':general-user-output-auth-domain-api')
 
     // 스프링 web starter 의존성
