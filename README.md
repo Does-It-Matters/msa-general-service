@@ -37,24 +37,24 @@
 - [ ] 출력 어댑터 단위 테스트 작성 (Issue #15)
 
 ### 동시성 
-- [ ] HashMap 출력 어댑터에 대한 동기화 (Issue #16)
-- [ ] ConcurrentHashMap
+- [x] HashMap 출력 어댑터에 대한 동기화 (Issue #16)
+- [x] ConcurrentHashMap
   - 분할 잠금으로 성능이 우수 
   - 별도의 코드가 없어서 동기화에 대한 개발자의 부담이 적음 
-- [ ] synchronized
+- [x] synchronized
   - java 모니터락을 활용한 동기화 
   - 인스턴스 레벨의 동기화로 성능 저하가 클 수 있음 
-- [ ] ReentrantLock
+- [x] ReentrantLock
   - 자바 모니터락에 비해 세밀한 제어가 가능 
   - 항상 락을 제대로 해제하도록 주의해야 함 
-- [ ] ReadWriteLock
+- [x] ReadWriteLock
   - 읽기 작업이 많은 환경에서 효율적
   - 쓰기 작업이 많다면 성능 저하 가능
   - 읽기 작업과 쓰기 작업의 우선순위 고려 
-- [ ] StampedLock
+- [x] StampedLock
   - 비관적, 낙관적 락 지원 
   - 재진입 불가능 
-- [ ] Semaphore
+- [x] Semaphore
   - 이진 세마포어로 사용 가능 
   - 복잡한 객체이기 때문에 단순한 상호 배제의 경우 ReentrantLock이나 synchronized가 더 적합
   - 다중 자원 접근 제어에는 유용
