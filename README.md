@@ -45,6 +45,8 @@
   - java 모니터락을 활용한 동기화 
   - 인스턴스 레벨의 동기화로 성능 저하가 클 수 있음 
 - [ ] ReentrantLock
+  - 자바 모니터락에 비해 세밀한 제어가 가능 
+  - 항상 락을 제대로 해제하도록 주의해야 함 
 - [ ] ReadWriteLock
 - [ ] StampedLock
 - [ ] Semaphore

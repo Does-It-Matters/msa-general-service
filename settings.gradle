@@ -9,4 +9,5 @@ include 'general-user-input-http'
 include 'general-user-input-api'
 include 'general-user-output-concurrent-hashmap'
 include 'general-user-output-synchronized-hashmap'
+include 'general-user-output-reentrantlock-hashmap'
 
