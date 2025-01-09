@@ -1,7 +1,9 @@
 package com.example.msa.general.service.application.service;
 
+import com.example.msa.general.service.application.port.in.GeneralUser;
 import com.example.msa.general.service.application.port.in.GeneralUserDataInputPort;
 import com.example.msa.general.service.application.port.out.GeneralUserDataOutputPort;
+import com.example.msa.general.service.application.port.out.GeneralUserDTO;
 import com.example.msa.general.service.application.port.out.UserAuthApiOutputPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -52,6 +54,56 @@ public class GeneralService implements GeneralUserDataInputPort {
             return false;
         } catch (Exception e) {
             logger.log(Level.SEVERE, "예상치 못한 오류 발생: " + e.getMessage(), e);
+            return false;
+        }
+    }
+
+    /**
+     * <b> 유저 정보 조회 </b>
+     *
+     * @param id 유저 아이디
+     * @return GeneralUserDTO 유저 정보
+     */
+    public GeneralUser getUser(String id) {
+        GeneralUserDTO user = persistenceAdapter.getUser(id);
+        if (user != null) {
+            logger.log(Level.INFO, "유저 정보 조회 성공: " + user.getId());
+        } else {
+            logger.log(Level.WARNING, "유저 정보 조회 실패: 아이디 " + id + "가 존재하지 않습니다.");
+        }
+        return new User(user.getId(), user.getEmail(), user.getAge());
+    }
+
+    /**
+     * <b> 유저 정보 수정 </b>
+     *
+     * @param id 수정할 유저 아이디
+     * @param newEmail 수정할 이메일
+     * @param newAge 수정할 나이
+     * @return 수정 성공 여부
+     */
+    public boolean updateUser(String id, String newEmail, int newAge) {
+        try {
+            persistenceAdapter.updateUser(id, newEmail, newAge);
+            return true;
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "유저 정보 수정 실패: " + e.getMessage(), e);
+            return false;
+        }
+    }
+
+    /**
+     * <b> 유저 정보 삭제 </b>
+     *
+     * @param id 삭제할 유저 아이디
+     * @return 삭제 성공 여부
+     */
+    public boolean deleteUser(String id) {
+        try {
+            persistenceAdapter.deleteUser(id);
+            return true;
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "유저 삭제 실패: " + e.getMessage(), e);
             return false;
         }
     }
