@@ -12,4 +12,5 @@ include 'general-user-output-synchronized-hashmap'
 include 'general-user-output-reentrantlock-hashmap'
 include 'general-user-output-readwritelock-hashmap'
 include 'general-user-output-stampedlock-hashmap'
+include 'general-user-output-semaphore-hashmap'
 
