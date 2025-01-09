@@ -8,4 +8,5 @@ include 'general-user-output-persistence-api'
 include 'general-user-input-http'
 include 'general-user-input-api'
 include 'general-user-output-concurrent-hashmap'
+include 'general-user-output-synchronized-hashmap'
 

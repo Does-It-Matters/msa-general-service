@@ -42,6 +42,8 @@
   - 분할 잠금으로 성능이 우수 
   - 별도의 코드가 없어서 동기화에 대한 개발자의 부담이 적음 
 - [ ] synchronized
+  - java 모니터락을 활용한 동기화 
+  - 인스턴스 레벨의 동기화로 성능 저하가 클 수 있음 
 - [ ] ReentrantLock
 - [ ] ReadWriteLock
 - [ ] StampedLock
