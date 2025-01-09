@@ -5,4 +5,7 @@ package com.example.msa.general.service.application.port.out;
  */
 public interface GeneralUserDataOutputPort {
     void saveGeneralUser(String userId, String email, int age);
+    GeneralUserDTO getUser(String id);
+    void updateUser(String id, String newEmail, int newAge);
+    void deleteUser(String id);
 }
