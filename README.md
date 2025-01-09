@@ -38,9 +38,11 @@
 
 ### 동시성 
 - [ ] HashMap 출력 어댑터에 대한 동기화 (Issue #16)
-  - ConcurrentHashMap
-  - synchronized
-  - ReentrantLock
-  - ReadWriteLock
-  - StampedLock
-  - Semaphore
+- [ ] ConcurrentHashMap
+  - 분할 잠금으로 성능이 우수 
+  - 별도의 코드가 없어서 동기화에 대한 개발자의 부담이 적음 
+- [ ] synchronized
+- [ ] ReentrantLock
+- [ ] ReadWriteLock
+- [ ] StampedLock
+- [ ] Semaphore
