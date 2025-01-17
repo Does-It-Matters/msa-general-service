@@ -4,7 +4,7 @@ import com.example.msa.general.service.application.port.in.GeneralUser;
 import com.example.msa.general.service.application.port.in.GeneralUserDataInputPort;
 import com.example.msa.general.service.application.port.out.GeneralUserDataOutputPort;
 import com.example.msa.general.service.application.port.out.GeneralUserDTO;
-import com.example.msa.general.service.application.port.out.UserAuthApiOutputPort;
+//import com.example.msa.general.service.application.port.out.UserAuthApiOutputPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 public class GeneralService implements GeneralUserDataInputPort {
     private static final Logger logger = Logger.getLogger(GeneralService.class.getName());
 
-    private final UserAuthApiOutputPort userAuthAPI;
+//    private final UserAuthApiOutputPort userAuthAPI;
     private final GeneralUserDataOutputPort persistenceAdapter;
 
     /**
@@ -34,28 +34,30 @@ public class GeneralService implements GeneralUserDataInputPort {
      */
     @Override
     public boolean signUp(String userId, String pw, String role) {
-        try {
-            // 외부 서비스에 회원가입 요청
-            final HttpResponse<String> response = userAuthAPI.requestUserSignUp(userId, pw, role);
-
-            // 외부 서비스 응답 코드에 따라 처리
-            if (response.statusCode() == 200 || response.statusCode() == 201) {
-                persistenceAdapter.saveGeneralUser(userId, "email", 19);
-                return true;
-            } else {
-                logger.log(Level.WARNING, "회원가입 실패, 응답 코드: " + response.statusCode());
-                return false;
-            }
-        } catch (IOException e) {
-            logger.log(Level.SEVERE, "네트워크 오류 발생: " + e.getMessage(), e);
-            return false;
-        } catch (InterruptedException e) {
-            logger.log(Level.SEVERE, "회원가입 처리 중 인터럽트 발생: " + e.getMessage(), e);
-            return false;
-        } catch (Exception e) {
-            logger.log(Level.SEVERE, "예상치 못한 오류 발생: " + e.getMessage(), e);
-            return false;
-        }
+//        try {
+//            // 외부 서비스에 회원가입 요청
+//            final HttpResponse<String> response = userAuthAPI.requestUserSignUp(userId, pw, role);
+//
+//            // 외부 서비스 응답 코드에 따라 처리
+//            if (response.statusCode() == 200 || response.statusCode() == 201) {
+//                persistenceAdapter.saveGeneralUser(userId, "email", 19);
+//                return true;
+//            } else {
+//                logger.log(Level.WARNING, "회원가입 실패, 응답 코드: " + response.statusCode());
+//                return false;
+//            }
+//        } catch (IOException e) {
+//            logger.log(Level.SEVERE, "네트워크 오류 발생: " + e.getMessage(), e);
+//            return false;
+//        } catch (InterruptedException e) {
+//            logger.log(Level.SEVERE, "회원가입 처리 중 인터럽트 발생: " + e.getMessage(), e);
+//            return false;
+//        } catch (Exception e) {
+//            logger.log(Level.SEVERE, "예상치 못한 오류 발생: " + e.getMessage(), e);
+//            return false;
+//        }
+        persistenceAdapter.saveGeneralUser(userId, "email", 19);
+        return false;
     }
 
     /**

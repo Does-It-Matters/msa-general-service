@@ -19,7 +19,7 @@ dependencies {
     implementation project(':general-user-output-persistence-api')
 
     // user auth 도메인에 요청을 의뢰하기 위한 인터페이스 모듈에 의존
-    implementation project(':general-user-output-auth-domain-api')
+//    implementation project(':general-user-output-auth-domain-api')
 
     // 스프링 web starter 의존성
     implementation 'org.springframework.boot:spring-boot-starter-web'

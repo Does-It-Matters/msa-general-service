@@ -37,8 +37,8 @@ dependencies {
 	implementation project(':general-user-output-unsynchronized-hashmap')
 
 	// 요청 의뢰 의존성 - user auth 도메인 요청 관련
-	implementation project(':general-user-output-auth-domain-api')
-	implementation project(':general-user-output-auth-domain-http')
+//	implementation project(':general-user-output-auth-domain-api')
+//	implementation project(':general-user-output-auth-domain-http')
 
 	// 스프링 web starter 의존성
 	implementation 'org.springframework.boot:spring-boot-starter-web'
