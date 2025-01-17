@@ -34,7 +34,13 @@ dependencies {
 
 	// 요청 의뢰 의존성 - 영속성 관련
 	implementation project(':general-user-output-persistence-api')
-	implementation project(':general-user-output-unsynchronized-hashmap')
+//	implementation project(':general-user-output-unsynchronized-hashmap')
+//	implementation project(':general-user-output-concurrent-hashmap')
+//	implementation project(':general-user-output-synchronized-hashmap')
+//	implementation project(':general-user-output-reentrantlock-hashmap')
+//	implementation project(':general-user-output-readwritelock-hashmap')
+//	implementation project(':general-user-output-stampedlock-hashmap')
+	implementation project(':general-user-output-semaphore-hashmap')
 
 	// 요청 의뢰 의존성 - user auth 도메인 요청 관련
 //	implementation project(':general-user-output-auth-domain-api')

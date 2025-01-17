@@ -57,7 +57,7 @@ public class GeneralService implements GeneralUserDataInputPort {
 //            return false;
 //        }
         persistenceAdapter.saveGeneralUser(userId, "email", 19);
-        return false;
+        return true;
     }
 
     /**
